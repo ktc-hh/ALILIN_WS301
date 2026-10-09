@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+        <header class="form-header">
+            <div class="logo">SR</div>
+            <h1>Student Registration</h1>
+            <p>Complete the form to register as a student.</p>
+        </header>
+
+        <div id="successMessage" class="success-message"
+             role="status" aria-live="polite" hidden>
+        </div>
+
+        <form id="registrationForm" novalidate>
+            <h2>Personal Information</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" name="studentId"
+                           placeholder="e.g. 2026-0001"
+                           data-label="Student ID" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName"
+                           placeholder="Enter your full name"
+                           data-label="Full Name" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="student@example.com"
+                           data-label="Email Address" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="09XXXXXXXXX"
+                           data-label="Phone Number"
+                           data-format="11-digit Philippine mobile number"
+                           required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob"
+                           data-label="Date of Birth" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender"
+                            data-label="Gender" required>
+                        <option value="">Select gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program</label>
+                    <select id="program" name="program"
+                            data-label="Program" required>
+                        <option value="">Select program</option>
+                        <option value="BSIT">BS Information Technology</option>
+                        <option value="BSCS">BS Computer Science</option>
+                        <option value="BSIS">BS Information Systems</option>
+                        <option value="BSBA">BS Business Administration</option>
+                        <option value="BSED">BS Secondary Education</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="yearLevel">Year Level</label>
+                    <select id="yearLevel" name="yearLevel"
+                            data-label="Year Level" required>
+                        <option value="">Select year level</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                        <option value="5th Year">5th Year</option>
+                    </select>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <h2>Account Information</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           placeholder="At least 8 characters"
+                           data-label="Password"
+                           autocomplete="new-password" required>
+                    <small class="error-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                           name="confirmPassword"
+                           placeholder="Re-enter your password"
+                           data-label="Confirm Password"
+                           autocomplete="new-password" required>
+                    <small class="error-message"></small>
+                </div>
+            </div>
+
+            <button type="button" id="togglePassword" class="toggle-password">
+                Show Passwords
+            </button>
+
+            <h2>Additional Information</h2>
+
+            <div class="form-group">
+                <label for="address">Complete Address</label>
+                <textarea id="address" name="address" rows="3"
+                          placeholder="House number, street, barangay, city"
+                          data-label="Address" required></textarea>
+                <small class="error-message"></small>
+            </div>
+
+            <div class="agreement">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for="agreement">
+                    I confirm that the information I provided is correct.
+                </label>
+            </div>
+            <small id="agreementError" class="error-message"></small>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">
+                    Register Now
+                </button>
+                <button type="reset" class="reset-btn">
+                    Reset Form
+                </button>
+            </div>
+        </form>
+
+        <footer>
+            <p>Student Registration System | WS 301</p>
+        </footer>
+    </main>
+
+</body>
+</html>
